@@ -1,0 +1,14 @@
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        # Start with the first string as the longest prefix
+        lp = strs[0]
+        # Iterate through each string in the list
+        for i in range(len(strs)):
+            # If the prefix becomes empty, return an empty string
+            if lp == '':
+                return ''
+            # While the current string does not start with the prefix, shorten the prefix
+            while not strs[i].startswith(lp):
+                lp = lp[:-1]
+        # Return the longest common prefix
+        return lp

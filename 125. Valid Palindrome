@@ -1,0 +1,11 @@
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        newS=""
+        # Replace the whitespace and convert string into lowercase
+        s=s.replace(" ", "").lower()
+        for c in s:
+            # Avoid special character
+            if c.isalnum():
+                newS+=c
+        #compare the variable with reverse of the variable
+        return(newS == newS[::-1])
